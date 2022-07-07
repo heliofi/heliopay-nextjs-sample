@@ -2354,10 +2354,10 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.4.tgz#031c27df0948981a7046b0723a7b3a52a8ff9396"
   integrity sha512-5idPlSIp0IBlk7hPT4xqGgB3rvNTKEnbaOUhSbDJfvbDrA/v9KDFuuduhNz4fBulBiCqDi+MxxvYN1cvgzyS7g==
 
-"@heliofi/react@^0.0.13-alpha.0":
-  version "0.0.13-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.0.13-alpha.0.tgz#0fec605e70086e16bca97ff80a36473de527de88"
-  integrity sha512-/Udji/DEfu5gWTSPl++0at/q3lFoVVARn5llqkudfdxb9mOxbIPKM1FrmQpvbMUiKU0aWGvW63aFPrLQ0jjhjw==
+"@heliofi/react@^0.0.14-alpha.0":
+  version "0.0.14-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.0.14-alpha.0.tgz#67f1c903880139dc0ba3222fdc72ec5d559a98e9"
+  integrity sha512-n4SOP05ayWtQZnfeQEq+9k7c+5sdR98VtMy9Y9X/c8ghs00E8sWvHBhzh5JlYHRBX7kR0Btcn54tMMy5mEjFuA==
   dependencies:
     "@heliofi/backend-api" "^0.1.37"
     "@heliofi/helio-icons" "^1.0.4"
