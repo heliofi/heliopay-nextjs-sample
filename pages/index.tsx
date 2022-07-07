@@ -3,6 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import {
+  ErrorPaymentEvent,
+  HelioPay,
+  PendingPaymentEvent,
+  SuccessPaymentEvent
+} from "@heliofi/react";
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -16,7 +23,28 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <HelioPay
+                cluster="devnet"
+                paymentRequestId={"207572d0-e915-457b-a8db-d79f59e47496"}
+                onSuccess={function (event: SuccessPaymentEvent): void {
+                    console.log("onSuccess", event);
+                }}
+                onError={function (event: ErrorPaymentEvent): void {
+                    console.log("onError", event);
+                }}
+                onPending={function (event: PendingPaymentEvent): void {
+                    console.log("onPending", event);
+                }}
+                onStartPayment={function (): void {
+                    console.log("onStartPayment");
+                }}
+                // theme={{
+                //     colors: {
+                //         primary: "#ff0000",
+                //         secondary: "#00ff00",
+                //     }
+                // }}
+            />
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
