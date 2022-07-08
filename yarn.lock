@@ -2339,29 +2339,18 @@
     "@ethersproject/logger" "^5.6.0"
     hash.js "1.1.7"
 
-"@heliofi/backend-api@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/@heliofi/backend-api/-/backend-api-0.0.25.tgz#cf0d57df5303924943cbe365fc40f70f2c2d93da"
-  integrity sha512-pbiJUslsIgKVVhHGXvcTzX0mR4u81DiPwKAmOgNULMLMCN0qASkHbH7beEADhbLW42nAzMG9piNkg1nWQ279zw==
-
-"@heliofi/backend-api@^0.1.37":
-  version "0.1.388"
-  resolved "https://registry.yarnpkg.com/@heliofi/backend-api/-/backend-api-0.1.388.tgz#1fc4da5e74107b1d1b02af0833a2872c183ed125"
-  integrity sha512-o49kjFBuRenwa7FVr5wFGeefEKS6n9tkRn0VSyiN22kptdMtQgbodu0TUz7Ba+8c4jZev8HdrVHp9U2ctxqhLQ==
-
 "@heliofi/helio-icons@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.4.tgz#031c27df0948981a7046b0723a7b3a52a8ff9396"
   integrity sha512-5idPlSIp0IBlk7hPT4xqGgB3rvNTKEnbaOUhSbDJfvbDrA/v9KDFuuduhNz4fBulBiCqDi+MxxvYN1cvgzyS7g==
 
-"@heliofi/react@^0.0.14-alpha.0":
-  version "0.0.14-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.0.14-alpha.0.tgz#67f1c903880139dc0ba3222fdc72ec5d559a98e9"
-  integrity sha512-n4SOP05ayWtQZnfeQEq+9k7c+5sdR98VtMy9Y9X/c8ghs00E8sWvHBhzh5JlYHRBX7kR0Btcn54tMMy5mEjFuA==
+"@heliofi/react@^0.1.2-alpha.0":
+  version "0.1.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.1.2-alpha.0.tgz#b997f50943e855160f48cc78af36b526d7b28563"
+  integrity sha512-frxC6xkdG3cptirwt7/bZm6CxoZRXuE17Fo47PO/Z28e16ebG71SyO7gQroHZcvgUmgiztQyzS/lgNPXovWsZw==
   dependencies:
-    "@heliofi/backend-api" "^0.1.37"
     "@heliofi/helio-icons" "^1.0.4"
-    "@heliofi/solana-adapter" "^0.0.7-alpha.0"
+    "@heliofi/solana-adapter" "^0.1.2-alpha.0"
     "@project-serum/anchor" "^0.21.0"
     "@solana/wallet-adapter-base" "^0.9.5"
     "@solana/wallet-adapter-react" "^0.15.5"
@@ -2379,25 +2368,14 @@
     ts-jest "^28.0.5"
     yup "^0.32.11"
 
-"@heliofi/solana-adapter@^0.0.7-alpha.0":
-  version "0.0.7-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-0.0.7-alpha.0.tgz#b3cacb67b6d75c49898aaa29c23a6a46f6aa9a0b"
-  integrity sha512-KIBKecDQ9z5NWs7I7GJcTrsJwt8jpxBrSzbDL8Jx6ON8FUs7ScVok5FeVCJPwRTbMUPd5Bgz1QhV3+tShsJhQA==
+"@heliofi/solana-adapter@^0.1.2-alpha.0":
+  version "0.1.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-0.1.2-alpha.0.tgz#379804e46426a4a13d03504eb11060ab983433da"
+  integrity sha512-eVlXic3awsoFwftemFxFyrybTjC8H1hr+xsfaQfhTWALtWo5Xvru1HeTmT7zIQEDnfIyJxcZ8xd6ful3q+Xo4w==
   dependencies:
-    "@heliofi/backend-api" "^0.0.25"
-    "@heliofi/web3-auth-common" "^0.0.8"
     "@project-serum/anchor" "^0.21.0"
     "@solana/spl-token" "^0.1.8"
     "@solana/web3.js" "^1.34.0"
-    bs58 "^5.0.0"
-    jsonwebtoken "^8.5.1"
-    tweetnacl "^1.0.3"
-
-"@heliofi/web3-auth-common@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@heliofi/web3-auth-common/-/web3-auth-common-0.0.8.tgz#deed83857b240abc5fe86cd5a2676f250b6420a9"
-  integrity sha512-MwoL1pisUbMduHwj58toWsydqSuWn1Q8+BvlfkAl3qVTFvy83NGDOMfHdk5SMspKOXF3K2nFZFglseQIDJOYxw==
-  dependencies:
     bs58 "^5.0.0"
     jsonwebtoken "^8.5.1"
     tweetnacl "^1.0.3"
