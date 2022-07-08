@@ -15,7 +15,11 @@ import Header from "../src/components/Header";
 import { useState } from "react";
 
 const Home: NextPage = () => {
-  const [paymentRequestId, setPaymentRequestId] = useState<string>('3785240e-f55c-40d8-9914-b75e9bba46fc');
+  const [paymentRequestId, setPaymentRequestId] = useState<string>(
+    "3785240e-f55c-40d8-9914-b75e9bba46fc"
+  );
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+
   return (
     <div>
       <Head>
@@ -36,26 +40,50 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.product}>
               <div className={styles.productLeft}>
-                <div className={styles.productTitle}>Choose your coffee</div>
-                <select className={styles.productSelect} defaultValue={paymentRequestId} onChange={(e) => {
-                  setPaymentRequestId(e.target.value);
-                }}>
-                  <option value="" disabled>Select one...</option>
-                  <option value="3785240e-f55c-40d8-9914-b75e9bba46fc">Diyarbekir Menengich Coffee</option>
-                  <option value="ded08427-cbd4-4c9c-b29f-cd2c78e59f1c">Italiano Cappucino</option>
-                  <option value="c5d4dd5d-d880-4b9f-a918-efb931a3aa1e">White Mocha</option>
-                  <option value="7a0762a2-36d6-4e91-9c9d-7dedc989edee">Irish Con Panna</option>
-                  <option value="77f02e26-43a1-4d9f-8601-961b4975b6e4">British Affosat Coffee</option>
-                </select>
+                {!isSuccess && (
+                  <>
+                    <div className={styles.productTitle}>
+                      Choose your coffee
+                    </div>
+                    <select
+                      className={styles.productSelect}
+                      defaultValue={paymentRequestId}
+                      onChange={(e) => {
+                        setPaymentRequestId(e.target.value);
+                      }}
+                    >
+                      <option value="" disabled>
+                        Select one...
+                      </option>
+                      <option value="3785240e-f55c-40d8-9914-b75e9bba46fc">
+                        Diyarbekir Menengich Coffee
+                      </option>
+                      <option value="ded08427-cbd4-4c9c-b29f-cd2c78e59f1c">
+                        Italiano Cappucino
+                      </option>
+                      <option value="c5d4dd5d-d880-4b9f-a918-efb931a3aa1e">
+                        White Mocha
+                      </option>
+                      <option value="7a0762a2-36d6-4e91-9c9d-7dedc989edee">
+                        Irish Con Panna
+                      </option>
+                      <option value="77f02e26-43a1-4d9f-8601-961b4975b6e4">
+                        British Affosat Coffee
+                      </option>
+                    </select>
+                  </>
+                )}
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster="devnet"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event: SuccessPaymentEvent): void {
                       console.log("onSuccess", event);
+                      setIsSuccess(true);
                     }}
                     onError={function (event: ErrorPaymentEvent): void {
                       console.log("onError", event);
+                      setIsSuccess(false);
                     }}
                     onPending={function (event: PendingPaymentEvent): void {
                       console.log("onPending", event);
