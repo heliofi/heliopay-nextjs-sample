@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster="devnet"
-                    payButtonCTA="Buy Coffee"
+                    payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event: SuccessPaymentEvent): void {
                       console.log("onSuccess", event);

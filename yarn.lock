@@ -2344,10 +2344,10 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.4.tgz#031c27df0948981a7046b0723a7b3a52a8ff9396"
   integrity sha512-5idPlSIp0IBlk7hPT4xqGgB3rvNTKEnbaOUhSbDJfvbDrA/v9KDFuuduhNz4fBulBiCqDi+MxxvYN1cvgzyS7g==
 
-"@heliofi/react@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.1.10.tgz#8c4f1b4ddb7176885a248d2f4dd4e9ef070d60c1"
-  integrity sha512-wj2brEZKVrCwARlItWct43ap6ceowms2UelfbFZqMMXvDuLG0+OgHk3czqiI4ovs1ZAnwpf1UEkgf8sj0wFdOw==
+"@heliofi/react@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.1.11.tgz#78cf4730c9a222578a96b05f0910f8bfc7032fbd"
+  integrity sha512-ymWXibYfblG9X3MqrM+//XF/udmeInVxCPRGSQO77gTvZvL6J/hjo6NMZ3uF/7KMBbVOqA/UzYgrEDL57VHYxw==
   dependencies:
     "@heliofi/helio-icons" "^1.0.4"
     "@heliofi/solana-adapter" "^0.1.10"

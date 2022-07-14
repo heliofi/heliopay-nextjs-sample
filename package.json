@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heliofi/react": "^0.1.10",
+    "@heliofi/react": "^0.1.11",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
