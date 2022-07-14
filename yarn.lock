@@ -2344,13 +2344,13 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.4.tgz#031c27df0948981a7046b0723a7b3a52a8ff9396"
   integrity sha512-5idPlSIp0IBlk7hPT4xqGgB3rvNTKEnbaOUhSbDJfvbDrA/v9KDFuuduhNz4fBulBiCqDi+MxxvYN1cvgzyS7g==
 
-"@heliofi/react@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.1.9.tgz#1e051dd69e927ca1c588a584ab99733a4ab3290a"
-  integrity sha512-RgyAjJN1WOmi9C9WRoM+8F4currpE0DMhmi8PfH/Kn1LpvGdoS9ViZYTWtLTJS1uY/bsg7PU/jJ9Dd9tuzmRoQ==
+"@heliofi/react@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-0.1.10.tgz#8c4f1b4ddb7176885a248d2f4dd4e9ef070d60c1"
+  integrity sha512-wj2brEZKVrCwARlItWct43ap6ceowms2UelfbFZqMMXvDuLG0+OgHk3czqiI4ovs1ZAnwpf1UEkgf8sj0wFdOw==
   dependencies:
     "@heliofi/helio-icons" "^1.0.4"
-    "@heliofi/solana-adapter" "^0.1.2-alpha.0"
+    "@heliofi/solana-adapter" "^0.1.10"
     "@project-serum/anchor" "^0.21.0"
     "@solana/wallet-adapter-base" "^0.9.5"
     "@solana/wallet-adapter-react" "^0.15.5"
@@ -2368,10 +2368,10 @@
     ts-jest "^28.0.5"
     yup "^0.32.11"
 
-"@heliofi/solana-adapter@^0.1.2-alpha.0":
-  version "0.1.2-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-0.1.2-alpha.0.tgz#379804e46426a4a13d03504eb11060ab983433da"
-  integrity sha512-eVlXic3awsoFwftemFxFyrybTjC8H1hr+xsfaQfhTWALtWo5Xvru1HeTmT7zIQEDnfIyJxcZ8xd6ful3q+Xo4w==
+"@heliofi/solana-adapter@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-0.1.10.tgz#6fd9d9b6a285654a69130b1300dc285069bb1cf8"
+  integrity sha512-L7i3l9z/EVeNTcjTE/KGPzc2geOXqldA03HIYtje7NsVzR/vrL1uHJl+7R7cW2Otnlsbm4G5iN8K7LOT3d5skQ==
   dependencies:
     "@project-serum/anchor" "^0.21.0"
     "@solana/spl-token" "^0.1.8"
