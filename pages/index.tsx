@@ -70,9 +70,13 @@ const Home: NextPage = () => {
                       <option value="77f02e26-43a1-4d9f-8601-961b4975b6e4">
                         British Affosat Coffee
                       </option>
+                      <option value="48844779-5949-43dd-a3cb-69e0f37e3569">
+                        British Affosat Coffee - without form
+                      </option>
                     </select>
                   </>
                 )}
+
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster="devnet"
@@ -92,6 +96,8 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
+                    supportedCurrencies={["USDC", "SOL", "DUST", "BOO", "HALO"]}
+                    totalAmount={0.145}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
