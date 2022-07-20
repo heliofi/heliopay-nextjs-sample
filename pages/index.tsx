@@ -16,7 +16,7 @@ import { useState } from "react";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "3785240e-f55c-40d8-9914-b75e9bba46fc"
+    "7996f469-640e-4c52-9bb8-017e1deea9c8"
   );
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
@@ -96,8 +96,8 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
-                    supportedCurrencies={["USDC", "SOL", "DUST", "BOO", "HALO"]}
-                    totalAmount={0.145}
+                    supportedCurrencies={["SOL"]}
+                    totalAmount={0.01}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
