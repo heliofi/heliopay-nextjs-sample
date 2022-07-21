@@ -16,7 +16,7 @@ import { useState } from "react";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "7996f469-640e-4c52-9bb8-017e1deea9c8"
+    "1554ad34-8326-4130-b2ac-1e8adb6ca26f"
   );
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
 
                 <div className={styles.paybutton}>
                   <HelioPay
-                    cluster="devnet"
+                    cluster="mainnet-beta"
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event: SuccessPaymentEvent): void {
