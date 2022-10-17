@@ -13,11 +13,13 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
 import { useState } from "react";
+import { Cluster } from "@solana/web3.js";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
     "634d3c5c14052fbca3893802"
   );
+  const [cluster, setCluster] = useState<Cluster>("devnet");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   return (
@@ -45,6 +47,7 @@ const Home: NextPage = () => {
                     <div className={styles.productTitle}>
                       Choose your coffee
                     </div>
+
                     <select
                       className={styles.productSelect}
                       defaultValue={paymentRequestId}
@@ -74,12 +77,47 @@ const Home: NextPage = () => {
                         British Affosat Coffee - without form
                       </option>
                     </select>
+                    <div className={styles.productTitle}>
+                      Or put your coffee link
+                    </div>
+                    <input
+                      type="text"
+                      value={paymentRequestId}
+                      onChange={(e) => setPaymentRequestId(e.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <div>
+                      <label>
+                        <input
+                          type="radio"
+                          name="cluster"
+                          value="devnet"
+                          checked={cluster === "devnet"}
+                          onChange={() => setCluster("devnet")}
+                        />
+                        &nbsp; devnet
+                      </label>
+                      &nbsp;&nbsp;&nbsp;
+                      <label>
+                        <input
+                          type="radio"
+                          name="cluster"
+                          value="mainnet-beta"
+                          checked={cluster === "mainnet-beta"}
+                          onChange={() => setCluster("mainnet-beta")}
+                        />
+                        &nbsp; mainnet-beta
+                      </label>
+                    </div>
+                    <br />
+                    <br />
                   </>
                 )}
 
                 <div className={styles.paybutton}>
                   <HelioPay
-                    cluster="devnet"
+                    cluster={cluster}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event: SuccessPaymentEvent): void {

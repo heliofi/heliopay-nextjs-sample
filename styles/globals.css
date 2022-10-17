@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input[type="text"] {
+  background: none;
+  height: 50px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #d7d3d2;
+}
