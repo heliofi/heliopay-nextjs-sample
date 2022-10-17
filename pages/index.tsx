@@ -16,7 +16,7 @@ import { useState } from "react";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "1554ad34-8326-4130-b2ac-1e8adb6ca26f"
+    "634d3c5c14052fbca3893802"
   );
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
@@ -55,13 +55,13 @@ const Home: NextPage = () => {
                       <option value="" disabled>
                         Select one...
                       </option>
-                      <option value="3785240e-f55c-40d8-9914-b75e9bba46fc">
+                      <option value="634d3c5c14052fbca3893802">
                         Diyarbekir Menengich Coffee
                       </option>
-                      <option value="ded08427-cbd4-4c9c-b29f-cd2c78e59f1c">
+                      <option value="634d3c5c14052fbca3893802">
                         Italiano Cappucino
                       </option>
-                      <option value="c5d4dd5d-d880-4b9f-a918-efb931a3aa1e">
+                      <option value="634d3c5c14052fbca3893802">
                         White Mocha
                       </option>
                       <option value="7a0762a2-36d6-4e91-9c9d-7dedc989edee">
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
 
                 <div className={styles.paybutton}>
                   <HelioPay
-                    cluster="mainnet-beta"
+                    cluster="devnet"
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event: SuccessPaymentEvent): void {
