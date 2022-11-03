@@ -4,10 +4,7 @@ import Image from "next/image";
 import styles from "../styles/main.module.scss";
 
 import {
-  ErrorPaymentEvent,
   HelioPay,
-  PendingPaymentEvent,
-  SuccessPaymentEvent,
 } from "@heliofi/react";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
@@ -120,15 +117,15 @@ const Home: NextPage = () => {
                     cluster={cluster}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
-                    onSuccess={function (event: SuccessPaymentEvent): void {
+                    onSuccess={function (event): void {
                       console.log("onSuccess", event);
                       setIsSuccess(true);
                     }}
-                    onError={function (event: ErrorPaymentEvent): void {
+                    onError={function (event): void {
                       console.log("onError", event);
                       setIsSuccess(false);
                     }}
-                    onPending={function (event: PendingPaymentEvent): void {
+                    onPending={function (event): void {
                       console.log("onPending", event);
                     }}
                     onStartPayment={function (): void {
