@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/main.module.scss";
 
 import {
-  HelioPay,
+  HelioPay
 } from "@heliofi/react";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
