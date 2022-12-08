@@ -2492,10 +2492,10 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-2.1.6.tgz#d80f1ba77f01f2e19747d1d42b434900537758ab"
-  integrity sha512-iunBmBbkXE1dXeWzHtdt2ITbwVTSdQbwWii2IKWw/yg8O0bJpPeJ/z2pyWVyqM6bBaB7fwarPQhmnJAmqlwPjw==
+"@heliofi/react@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-2.1.7.tgz#d1b6a1510edea0831b25ad310d6d1a9ff052686f"
+  integrity sha512-BV8ttx+D+O5UPeWD3hBosgBN4dYGQ5vpBGH8uS+Yp6HnheIjPntThWnj6vmFiKHDMggmyW8NVMIzYiKl+ggKPA==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
     "@heliofi/common" "0.1.114"
@@ -2509,6 +2509,7 @@
     "@solana/wallet-adapter-wallets" "^0.16.1"
     "@solana/web3.js" "^1.44.0"
     aws-amplify "^4.3.16"
+    class-transformer "^0.5.1"
     crypto-js "^4.1.1"
     downshift "^6.1.7"
     formik "^2.2.9"
