@@ -2477,10 +2477,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@heliofi/common@^0.1.75":
-  version "0.1.78"
-  resolved "https://registry.yarnpkg.com/@heliofi/common/-/common-0.1.78.tgz#0b7e792ba00f928936247ecd691b0ab8ca789122"
-  integrity sha512-E4eFG2PVcGt22fqWUdvLrJQqJRM00xOEmOovPve94ENkT+iDc0Ly7deBnKDtssa5cs5zA1cOxXwzQIbewM1Jaw==
+"@heliofi/common@0.1.114":
+  version "0.1.114"
+  resolved "https://registry.yarnpkg.com/@heliofi/common/-/common-0.1.114.tgz#38bae5b53b1011a9d76d23e71ec338036022ccf1"
+  integrity sha512-YcTkF4qwyvLlfV/6DwzLPTXSpT4bPe+3nRm5ujRX36qO1Q4Tu0n236z+E4X2rWT4WZK9zX4/O2GA83InEISuzQ==
   dependencies:
     "@solana/web3.js" "^1.44.0"
     class-transformer "^0.5.1"
@@ -2492,13 +2492,13 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@^2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-2.1.2.tgz#1c61416c8ab693c027d17902f531929e3ede7966"
-  integrity sha512-5Pg8wJeDLTYBmeVHdCf7R+EtpXzXrGnvbZIU7TPY0VIB5XbivvZ1vGRAsyyZCYu/W193B1fjTOGH8eI7uqyERw==
+"@heliofi/react@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-2.1.6.tgz#d80f1ba77f01f2e19747d1d42b434900537758ab"
+  integrity sha512-iunBmBbkXE1dXeWzHtdt2ITbwVTSdQbwWii2IKWw/yg8O0bJpPeJ/z2pyWVyqM6bBaB7fwarPQhmnJAmqlwPjw==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
-    "@heliofi/common" "^0.1.75"
+    "@heliofi/common" "0.1.114"
     "@heliofi/helio-icons" "^1.0.5"
     "@heliofi/solana-adapter" "^2.0.7"
     "@project-serum/anchor" "^0.25.0"
@@ -2514,10 +2514,13 @@
     formik "^2.2.9"
     jest "^28.1.1"
     react "^18.2.0"
+    react-countdown-circle-timer "^3.1.0"
     react-dom "^18.2.0"
     react-phone-number-input "^3.2.11"
+    reflect-metadata "^0.1.13"
     styled-components "^5.3.5"
     ts-jest "^28.0.5"
+    tweetnacl "^1.0.3"
     yup "^0.32.11"
 
 "@heliofi/solana-adapter@^2.0.7":
@@ -7458,6 +7461,11 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
+react-countdown-circle-timer@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-countdown-circle-timer/-/react-countdown-circle-timer-3.1.0.tgz#394737817a7bec9cb9162e4c3e80f8f18ef20820"
+  integrity sha512-vU3fQ+Te7abhSmvTT5N0+4aOJhXAg6wVWvpEd5snkB7lFrAlEBl5dqzLSGnPZDI4MWbp7ayMDkcLWALWE+flQQ==
+
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
@@ -7569,6 +7577,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerator-runtime@^0.13.10:
   version "0.13.10"
