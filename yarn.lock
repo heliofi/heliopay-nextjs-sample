@@ -2477,10 +2477,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@heliofi/common@^0.1.75":
-  version "0.1.142"
-  resolved "https://registry.npmjs.org/@heliofi/common/-/common-0.1.142.tgz#20e157f4f89f3719b5f183aee8c17629def6d573"
-  integrity sha512-BPIglvstHqGF2OHdqP7AXtluZbVjHJzZy6jwO5xHdldIiFUdSGcZIB1GadeCDJsAwRl4OoGJIRgaY6eExRv2gA==
+"@heliofi/common@0.1.135":
+  version "0.1.135"
+  resolved "https://registry.yarnpkg.com/@heliofi/common/-/common-0.1.135.tgz#f2229d1d7996ed1aa7b214292265b7caca2ba729"
+  integrity sha512-ctD95S4TTzO06kLhp50GG1cePc4iwAtOCW5phLg2txJdA0Qx+Uu+DMFn+I699xJ3de3R7mWDmEcr2sdmnfH2oQ==
   dependencies:
     "@project-serum/anchor" "^0.25.0"
     "@solana/web3.js" "^1.44.0"
@@ -2494,15 +2494,15 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@^2.1.11":
-  version "2.1.11"
-  resolved "https://registry.npmjs.org/@heliofi/react/-/react-2.1.11.tgz#cac16526c50df5e9eed87df15246500eea53b9cb"
-  integrity sha512-TQductewa8gMI27nmIpfE/pR/gHXgcpwm+u/6nM5CDP7wVliYtH3wD1uYl2R8dfW8yy0ajSZQuB3Z51fk6RjIQ==
+"@heliofi/react@^3.0.2-alpha.0":
+  version "3.0.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.0.2-alpha.0.tgz#1238e9f7d0d6fd8b856be5796016dbf59fe9dbcc"
+  integrity sha512-OG8T7nfg+167CwV2tDmTKVm+RU4+uTs4VSgwYjyQ2JIUrZH7GbJcqOmp9v7qWl5su0SWoyH9f7mweYg1r1XfHg==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
-    "@heliofi/common" "^0.1.75"
+    "@heliofi/common" "0.1.135"
     "@heliofi/helio-icons" "^1.0.5"
-    "@heliofi/solana-adapter" "^2.0.7"
+    "@heliofi/solana-adapter" "3.1.1-alpha"
     "@project-serum/anchor" "^0.25.0"
     "@solana/spl-token" "^0.3.6"
     "@solana/wallet-adapter-base" "^0.9.5"
@@ -2511,21 +2511,26 @@
     "@solana/wallet-adapter-wallets" "^0.16.1"
     "@solana/web3.js" "^1.44.0"
     aws-amplify "^4.3.16"
+    bs58 "^5.0.0"
+    class-transformer "^0.5.1"
     crypto-js "^4.1.1"
     downshift "^6.1.7"
     formik "^2.2.9"
     jest "^28.1.1"
+    jwt-decode "^3.1.2"
     react "^18.2.0"
     react-dom "^18.2.0"
     react-phone-number-input "^3.2.11"
+    reflect-metadata "^0.1.13"
     styled-components "^5.3.5"
     ts-jest "^28.0.5"
+    tweetnacl "^1.0.3"
     yup "^0.32.11"
 
-"@heliofi/solana-adapter@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-2.0.7.tgz#8ccacc3c2d83e6c7a7f8ab9d7399421af0d0b230"
-  integrity sha512-hy0LP7otaoBSex1C2TZj8FC0qrRPt3KCPg1UYSHw+aSkBq964YhVZyDxqFAUZz9JnU4q7gemQovJ+2/vgbawVg==
+"@heliofi/solana-adapter@3.1.1-alpha":
+  version "3.1.1-alpha"
+  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-3.1.1-alpha.tgz#84234d71dc1a2141fe815453018fa254e3cd5b3e"
+  integrity sha512-eDWlzhib82g49ooSsqgngd5ThWvVy94cOtxyUIhH+g0icULBD6M+LkL30aIvsW/kAw5bqBankLvXjXb0TNt4Kw==
   dependencies:
     "@project-serum/anchor" "^0.25.0"
     "@solana/spl-token" "^0.2.0"
@@ -6737,6 +6742,11 @@ jws@^3.2.2:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
 
+jwt-decode@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
+
 keccak@^3.0.0, keccak@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/keccak/-/keccak-3.0.2.tgz#4c2c6e8c54e04f2670ee49fa734eb9da152206e0"
@@ -7571,6 +7581,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerator-runtime@^0.13.10:
   version "0.13.10"

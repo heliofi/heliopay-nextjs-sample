@@ -14,7 +14,7 @@ import { Cluster } from "@solana/web3.js";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "634d3c5c14052fbca3893802"
+    "63a5802fa14ca68210928eac"
   );
   const [cluster, setCluster] = useState<Cluster>("devnet");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -131,6 +131,8 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
+                    supportedCurrencies={['USDC']}
+                    totalAmount={0.01}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
