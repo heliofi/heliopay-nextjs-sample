@@ -131,6 +131,8 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
+                    supportedCurrencies={['USDC']}
+                    totalAmount={0.001}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
