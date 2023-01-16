@@ -14,7 +14,7 @@ import { Cluster } from "@solana/web3.js";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "63a5802fa14ca68210928eac"
+    "63c5527565f452f94a1da81d"
   );
   const [cluster, setCluster] = useState<Cluster>("devnet");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
