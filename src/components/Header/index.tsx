@@ -6,7 +6,7 @@ const Header = () => {
     <header className={styles.wrapper}>
       <div className={styles.container}>
         <Link href="/">
-          <a className={styles.logo}>TheGreatProduct</a>
+          <a className={styles.logo}>Test your Helio checkout</a>
         </Link>
         <div className={styles.nav}>
           <Link href="/">
