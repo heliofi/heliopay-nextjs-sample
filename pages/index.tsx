@@ -32,17 +32,17 @@ const Home: NextPage = () => {
 
         <div className={styles.hero}>
           <div className={styles.heroContainer}>
-            <div className={styles.heroTitle}>Order TheGreatProduct</div>
-            <div className={styles.heroText}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum
-              repellat voluptas laboriosam expedita omnis, voluptate nihil.
+            <div className={styles.heroTitle}>Your coffee order</div>
+            <div className={styles.heroText}>Speciality 80+ arabica single origin coffee beans. Characterised by zesty
+              acidity and heavy body, with slightly herbal, chocolate, citric undertones.
+              All coffee is roasted daily and fresh!
             </div>
             <div className={styles.product}>
               <div className={styles.productLeft}>
                 {!isSuccess && (
                   <>
                     <div className={styles.productTitle}>
-                      Choose your coffee
+                      Choose an example
                     </div>
 
                     <select
@@ -55,27 +55,16 @@ const Home: NextPage = () => {
                       <option value="" disabled>
                         Select one...
                       </option>
-                      <option value="634d3c5c14052fbca3893802">
-                        Diyarbekir Menengich Coffee
+                      <option value="63c5527565f452f94a1da81d">
+                        Coffee order (mainnet)
                       </option>
-                      <option value="634d3c5c14052fbca3893802">
-                        Italiano Cappucino
-                      </option>
-                      <option value="634d3c5c14052fbca3893802">
-                        White Mocha
-                      </option>
-                      <option value="7a0762a2-36d6-4e91-9c9d-7dedc989edee">
-                        Irish Con Panna
-                      </option>
-                      <option value="77f02e26-43a1-4d9f-8601-961b4975b6e4">
-                        British Affosat Coffee
-                      </option>
-                      <option value="48844779-5949-43dd-a3cb-69e0f37e3569">
-                        British Affosat Coffee - without form
+                      <option value="63c552ac5cff95b55ea5fcfc">
+                        Coffee order (testnet)
                       </option>
                     </select>
-                    <div className={styles.productTitle}>
-                      Or put your coffee link
+                    <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
+                        '"Dynamic payment". Copy paste the paymentRequestId from Step 4: Integrate Helio'}>
+                      Or paste your "paymentRequestId" to test your checkout
                     </div>
                     <input
                       type="text"
