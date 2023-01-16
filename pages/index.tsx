@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                       </option>
                     </select>
                     <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
-                        '"Dynamic payment". Copy paste the paymentRequestId from Step 4: Integrate Helio'}>
+                        '"Dynamic payment". Copy paste the paymentRequestId  from Step 4: Integrate Helio'}>
                       Or paste your "paymentRequestId" to test your checkout
                     </div>
                     <input
