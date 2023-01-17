@@ -14,7 +14,7 @@ import { Cluster } from "@solana/web3.js";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "63c5527565f452f94a1da81d"
+    "63c5b1a765f452f94a1e5ade"
   );
   const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
                       <option value="" disabled>
                         Select one...
                       </option>
-                      <option value="63c5527565f452f94a1da81d">
+                      <option value="63c5b1a765f452f94a1e5ade">
                         Coffee order (mainnet)
                       </option>
                       <option value="63c552ac5cff95b55ea5fcfc">
