@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
     "63c5527565f452f94a1da81d"
   );
-  const [cluster, setCluster] = useState<Cluster>("devnet");
+  const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   return (
