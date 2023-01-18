@@ -77,22 +77,22 @@ const Home: NextPage = () => {
                         <input
                           type="radio"
                           name="cluster"
-                          value="devnet"
-                          checked={cluster === "devnet"}
-                          onChange={() => setCluster("devnet")}
+                          value="mainnet-beta"
+                          checked={cluster === "mainnet-beta"}
+                          onChange={() => setCluster("mainnet-beta")}
                         />
-                        &nbsp; devnet
+                        &nbsp; mainnet-beta
                       </label>
                       &nbsp;&nbsp;&nbsp;
                       <label>
                         <input
                           type="radio"
                           name="cluster"
-                          value="mainnet-beta"
-                          checked={cluster === "mainnet-beta"}
-                          onChange={() => setCluster("mainnet-beta")}
+                          value="devnet"
+                          checked={cluster === "devnet"}
+                          onChange={() => setCluster("devnet")}
                         />
-                        &nbsp; mainnet-beta
+                        &nbsp; devnet
                       </label>
                     </div>
                     <br />
