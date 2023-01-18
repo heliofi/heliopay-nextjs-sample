@@ -2494,10 +2494,10 @@
   resolved "https://registry.yarnpkg.com/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/@heliofi/react/-/react-3.1.0.tgz#26b82031c1319755dae352f439f3ffb64f705898"
-  integrity sha512-JkdYV2VOf78/h9wzROBywNIAgqFP6Ayi3B/5ivA1naNh8k79UaqQ3wXtV8Iz0Bb3K/jqMuzKN7Fe9QKp3Ui8Zg==
+"@heliofi/react@3.1.1-alpha.0":
+  version "3.1.1-alpha.0"
+  resolved "https://registry.npmjs.org/@heliofi/react/-/react-3.1.1-alpha.0.tgz#1b364e29ac1c5feda0c5e418976b6cd25fc9d116"
+  integrity sha512-AHqFv+ZTrX7dVnYiBbG+Ie3paveFpKA1otShpCnG1O8g4frjER/v+nZlmYj/AGrmhkazTsYTxWSl68gM/ID7mQ==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
     "@heliofi/common" "0.1.135"
