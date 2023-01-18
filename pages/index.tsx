@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/main.module.scss";
 
 import {
@@ -14,9 +13,9 @@ import { Cluster } from "@solana/web3.js";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "63c5527565f452f94a1da81d"
+    "63c5b1a765f452f94a1e5ade"
   );
-  const [cluster, setCluster] = useState<Cluster>("devnet");
+  const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   return (
@@ -55,7 +54,7 @@ const Home: NextPage = () => {
                       <option value="" disabled>
                         Select one...
                       </option>
-                      <option value="63c5527565f452f94a1da81d">
+                      <option value="63c5b1a765f452f94a1e5ade">
                         Coffee order (mainnet)
                       </option>
                       <option value="63c552ac5cff95b55ea5fcfc">
@@ -64,7 +63,7 @@ const Home: NextPage = () => {
                     </select>
                     <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
                         '"Dynamic payment". Copy paste the paymentRequestId  from Step 4: Integrate Helio'}>
-                      Or paste your &quot;paymentRequestId&quot; to test your checkout
+                      Paste you payment ID here to test your checkout
                     </div>
                     <input
                       type="text"
@@ -78,22 +77,22 @@ const Home: NextPage = () => {
                         <input
                           type="radio"
                           name="cluster"
-                          value="devnet"
-                          checked={cluster === "devnet"}
-                          onChange={() => setCluster("devnet")}
+                          value="mainnet-beta"
+                          checked={cluster === "mainnet-beta"}
+                          onChange={() => setCluster("mainnet-beta")}
                         />
-                        &nbsp; devnet
+                        &nbsp; mainnet-beta
                       </label>
                       &nbsp;&nbsp;&nbsp;
                       <label>
                         <input
                           type="radio"
                           name="cluster"
-                          value="mainnet-beta"
-                          checked={cluster === "mainnet-beta"}
-                          onChange={() => setCluster("mainnet-beta")}
+                          value="devnet"
+                          checked={cluster === "devnet"}
+                          onChange={() => setCluster("devnet")}
                         />
-                        &nbsp; mainnet-beta
+                        &nbsp; devnet
                       </label>
                     </div>
                     <br />
