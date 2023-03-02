@@ -17,6 +17,7 @@ const Home: NextPage = () => {
   );
   const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isDynamic, setIsDynamic] = useState<boolean>(false);
 
   return (
     <div>
@@ -95,6 +96,13 @@ const Home: NextPage = () => {
                         &nbsp; devnet
                       </label>
                     </div>
+                    <div>
+                      <br/>
+                      <label>
+                        <input type="checkbox" name={'isDynamic'} checked={isDynamic} onChange={() => setIsDynamic(!isDynamic)}/>
+                        &nbsp; Dynamic payment
+                      </label>
+                    </div>
                     <br />
                     <br />
                   </>
@@ -120,7 +128,7 @@ const Home: NextPage = () => {
                       console.log("onStartPayment");
                     }}
                     supportedCurrencies={['USDC']}
-                    totalAmount={0.01}
+                    totalAmount={isDynamic ? 0.01 : undefined}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
