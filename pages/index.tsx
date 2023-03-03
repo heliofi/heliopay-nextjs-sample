@@ -8,8 +8,10 @@ import {
 
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Cluster } from "@solana/web3.js";
+import { HelioSDK } from "@heliofi/sdk";
+import { Paylink } from "@heliofi/common";
 
 const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
@@ -17,8 +19,20 @@ const Home: NextPage = () => {
   );
   const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [isDynamic, setIsDynamic] = useState<boolean>(false);
+  const [paymentRequest, setPaymentRequest] = useState<Paylink>();
 
+  const sdk = useMemo(() => {
+    return new HelioSDK({ cluster })
+  }, [cluster]);
+
+  useEffect( () => {
+    const fetchPaylink = async () => {
+      const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId);
+      setPaymentRequest(paylink);
+    }
+    fetchPaylink();
+
+  }, [paymentRequestId, sdk.apiService])
   return (
     <div>
       <Head>
@@ -96,13 +110,6 @@ const Home: NextPage = () => {
                         &nbsp; devnet
                       </label>
                     </div>
-                    <div>
-                      <br/>
-                      <label>
-                        <input type="checkbox" name={'isDynamic'} checked={isDynamic} onChange={() => setIsDynamic(!isDynamic)}/>
-                        &nbsp; Dynamic payment
-                      </label>
-                    </div>
                     <br />
                     <br />
                   </>
@@ -128,7 +135,7 @@ const Home: NextPage = () => {
                       console.log("onStartPayment");
                     }}
                     supportedCurrencies={['USDC']}
-                    totalAmount={isDynamic ? 0.01 : undefined}
+                    totalAmount={paymentRequest?.dynamic ? 0.01 : undefined}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
