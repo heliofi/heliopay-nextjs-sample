@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   );
   const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [isDynamic, setIsDynamic] = useState<boolean>(false);
+  const [isDynamic, setIsDynamic] = useState<boolean>(true);
 
   return (
     <div>
