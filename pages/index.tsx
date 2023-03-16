@@ -1,17 +1,15 @@
-import type { NextPage } from "next";
+import type {NextPage} from "next";
 import Head from "next/head";
 import styles from "../styles/main.module.scss";
 
-import {
-  HelioPay
-} from "@heliofi/react";
+import {HelioPay} from "@heliofi/react";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
 import { useEffect, useMemo, useState } from "react";
 import { Cluster } from "@solana/web3.js";
 import { HelioSDK } from "@heliofi/sdk";
-import { Paylink } from "@heliofi/common";
+import { Paylink, PaymentRequestType } from "@heliofi/common";
 
 type Favicon = {
   rel: string;
@@ -105,6 +103,7 @@ const Home: NextPage = () => {
     "63c5b1a765f452f94a1e5ade"
   );
   const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
+  const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [paymentRequest, setPaymentRequest] = useState<Paylink>();
 
@@ -114,12 +113,14 @@ const Home: NextPage = () => {
 
   useEffect( () => {
     const fetchPaylink = async () => {
-      const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId);
-      setPaymentRequest(paylink);
+      if (paymentType === PaymentRequestType.PAYLINK) {
+        const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId, paymentType);
+        setPaymentRequest(paylink as Paylink);
+      }
     }
     fetchPaylink();
 
-  }, [paymentRequestId, sdk.apiService])
+  }, [paymentRequestId, sdk.apiService, paymentType])
   return (
     <div>
       <Head>
@@ -159,10 +160,16 @@ const Home: NextPage = () => {
                         Select one...
                       </option>
                       <option value="63c5b1a765f452f94a1e5ade">
-                        Coffee order (mainnet)
+                        Coffee order (mainnet Pay Link)
                       </option>
                       <option value="63c552ac5cff95b55ea5fcfc">
-                        Coffee order (testnet)
+                        Coffee order (testnet Pay Link)
+                      </option>
+                      <option value="641305a1b3953f52a45fc68a">
+                        Coffee order (mainnet Pay Stream)
+                      </option>
+                      <option value="64130521bcb19399cb11af57">
+                        Coffee order (testnet Pay Stream)
                       </option>
                     </select>
                     <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
@@ -201,6 +208,31 @@ const Home: NextPage = () => {
                     </div>
                     <br />
                     <br />
+                    <div>
+                      <label>
+                        <input
+                          type="radio"
+                          name="requestType"
+                          value={PaymentRequestType.PAYLINK}
+                          checked={paymentType === PaymentRequestType.PAYLINK}
+                          onChange={() => setPaymentType(PaymentRequestType.PAYLINK)}
+                        />
+                        &nbsp; Pay Link
+                      </label>
+                      &nbsp;&nbsp;&nbsp;
+                      <label>
+                        <input
+                          type="radio"
+                          name="requestType"
+                          value={PaymentRequestType.PAYSTREAM}
+                          checked={paymentType === PaymentRequestType.PAYSTREAM}
+                          onChange={() => setPaymentType(PaymentRequestType.PAYSTREAM)}
+                        />
+                        &nbsp; Pay Stream
+                      </label>
+                    </div>
+                    <br />
+                    <br />
                   </>
                 )}
 
@@ -225,6 +257,7 @@ const Home: NextPage = () => {
                     }}
                     supportedCurrencies={['USDC']}
                     totalAmount={paymentRequest?.dynamic ? 0.01 : undefined}
+                    paymentType={paymentType}
                     // theme={{
                     //     colors: {
                     //         primary: "#ff0000",
