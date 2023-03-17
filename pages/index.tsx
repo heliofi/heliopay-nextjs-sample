@@ -105,7 +105,7 @@ const Home: NextPage = () => {
   const [cluster, setCluster] = useState<Cluster>(ClusterType.Mainnet);
   const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [paymentRequest, setPaymentRequest] = useState<Paylink>();
+  const [paymentRequest, setPaymentRequest] = useState<Paylink | null>(null);
 
   const sdk = useMemo(() => {
     return new HelioSDK({ cluster })
@@ -116,6 +116,8 @@ const Home: NextPage = () => {
       if (paymentType === PaymentRequestType.PAYLINK) {
         const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId, paymentType);
         setPaymentRequest(paylink as Paylink);
+      } else {
+        setPaymentRequest(null);
       }
     }
     fetchPaylink();
