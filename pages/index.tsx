@@ -99,13 +99,13 @@ const favicons: Array<Favicon> = [
 ];
 
 const Home: NextPage = () => {
-  const [paymentRequestId, setPaymentRequestId] = useState<string>(
-    "63c5b1a765f452f94a1e5ade"
-  );
+  const defaultPaymentRequestId = '63c5b1a765f452f94a1e5ade';
+  const [paymentRequestId, setPaymentRequestId] = useState<string>(defaultPaymentRequestId);
   const [cluster, setCluster] = useState<Cluster>(ClusterType.Mainnet);
   const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [paymentRequest, setPaymentRequest] = useState<Paylink | null>(null);
+  const [isShownCustom, setIsShownCustom] = useState<boolean>(false);
 
   const sdk = useMemo(() => {
     return new HelioSDK({ cluster })
@@ -113,7 +113,7 @@ const Home: NextPage = () => {
 
   useEffect( () => {
     const fetchPaylink = async () => {
-      if (paymentType === PaymentRequestType.PAYLINK) {
+      if (paymentType === PaymentRequestType.PAYLINK && paymentRequestId) {
         const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId, paymentType);
         setPaymentRequest(paylink as Paylink);
       } else {
@@ -155,6 +155,7 @@ const Home: NextPage = () => {
                       className={styles.productSelect}
                       defaultValue={paymentRequestId}
                       onChange={(e) => {
+                        setIsShownCustom(!e.target.value);
                         setPaymentRequestId(e.target.value);
                         setCluster(e.target[e.target.selectedIndex].getAttribute('data-cluster') as Cluster);
                         setPaymentType(e.target[e.target.selectedIndex].getAttribute('data-payment-type') as PaymentRequestType);
@@ -164,7 +165,7 @@ const Home: NextPage = () => {
                         Select one...
                       </option>
                       <option
-                          value="63c5b1a765f452f94a1e5ade"
+                          value={defaultPaymentRequestId}
                           data-payment-type={PaymentRequestType.PAYLINK}
                           data-cluster={ClusterType.Mainnet}
                       >
@@ -191,68 +192,77 @@ const Home: NextPage = () => {
                       >
                         Coffee order (testnet Pay Stream)
                       </option>
+                      <option
+                          value={''}
+                          data-payment-type={PaymentRequestType.PAYLINK}
+                          data-cluster={ClusterType.Mainnet}
+                      >
+                        Custom
+                      </option>
                     </select>
-                    <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
-                        '"Dynamic payment". Copy paste the paymentRequestId  from Step 4: Integrate Helio'}>
-                      Paste you payment ID here to test your checkout
-                    </div>
-                    <input
-                      type="text"
-                      value={paymentRequestId}
-                      onChange={(e) => setPaymentRequestId(e.target.value)}
-                    />
-                    <br />
-                    <br />
-                    <div>
-                      <label>
-                        <input
-                          type="radio"
-                          name="cluster"
-                          value={ClusterType.Mainnet}
-                          checked={cluster === ClusterType.Mainnet}
-                          onChange={() => setCluster(ClusterType.Mainnet)}
-                        />
-                        &nbsp; mainnet-beta
-                      </label>
-                      &nbsp;&nbsp;&nbsp;
-                      <label>
-                        <input
-                          type="radio"
-                          name="cluster"
-                          value={ClusterType.Devnet}
-                          checked={cluster === ClusterType.Devnet}
-                          onChange={() => setCluster(ClusterType.Devnet)}
-                        />
-                        &nbsp; devnet
-                      </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div>
-                      <label title={'single coffee order'}>
-                        <input
-                          type="radio"
-                          name="requestType"
-                          value={PaymentRequestType.PAYLINK}
-                          checked={paymentType === PaymentRequestType.PAYLINK}
-                          onChange={() => setPaymentType(PaymentRequestType.PAYLINK)}
-                        />
-                        &nbsp; 1-time payment
-                      </label>
-                      &nbsp;&nbsp;&nbsp;
-                      <label title={'coffee subscription'}>
-                        <input
-                          type="radio"
-                          name="requestType"
-                          value={PaymentRequestType.PAYSTREAM}
-                          checked={paymentType === PaymentRequestType.PAYSTREAM}
-                          onChange={() => setPaymentType(PaymentRequestType.PAYSTREAM)}
-                        />
-                        &nbsp; recurring payment
-                      </label>
-                    </div>
-                    <br />
-                    <br />
+                    {isShownCustom && <>
+                      <div className={styles.productTitle} data-tooltip={'Log in to hel.io and create a Pay Link or ' +
+                          '"Dynamic payment". Copy paste the paymentRequestId  from Step 4: Integrate Helio'}>
+                        Paste you payment ID here to test your checkout
+                      </div>
+                      <input
+                          type="text"
+                          value={paymentRequestId}
+                          onChange={(e) => setPaymentRequestId(e.target.value)}
+                      />
+                      <br />
+                      <br />
+                      <div>
+                        <label>
+                          <input
+                              type="radio"
+                              name="cluster"
+                              value={ClusterType.Mainnet}
+                              checked={cluster === ClusterType.Mainnet}
+                              onChange={() => setCluster(ClusterType.Mainnet)}
+                          />
+                          &nbsp; mainnet-beta
+                        </label>
+                        &nbsp;&nbsp;&nbsp;
+                        <label>
+                          <input
+                              type="radio"
+                              name="cluster"
+                              value={ClusterType.Devnet}
+                              checked={cluster === ClusterType.Devnet}
+                              onChange={() => setCluster(ClusterType.Devnet)}
+                          />
+                          &nbsp; devnet
+                        </label>
+                      </div>
+                      <br />
+                      <br />
+                      <div>
+                        <label title={'single coffee order'}>
+                          <input
+                              type="radio"
+                              name="requestType"
+                              value={PaymentRequestType.PAYLINK}
+                              checked={paymentType === PaymentRequestType.PAYLINK}
+                              onChange={() => setPaymentType(PaymentRequestType.PAYLINK)}
+                          />
+                          &nbsp; 1-time payment
+                        </label>
+                        &nbsp;&nbsp;&nbsp;
+                        <label title={'coffee subscription'}>
+                          <input
+                              type="radio"
+                              name="requestType"
+                              value={PaymentRequestType.PAYSTREAM}
+                              checked={paymentType === PaymentRequestType.PAYSTREAM}
+                              onChange={() => setPaymentType(PaymentRequestType.PAYSTREAM)}
+                          />
+                          &nbsp; recurring payment
+                        </label>
+                      </div>
+                      <br />
+                      <br />
+                    </>}
                   </>
                 )}
 
