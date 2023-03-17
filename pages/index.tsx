@@ -8,7 +8,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
 import { useEffect, useMemo, useState } from "react";
 import { Cluster } from "@solana/web3.js";
-import { HelioSDK } from "@heliofi/sdk";
+import { HelioSDK, ClusterType } from "@heliofi/sdk";
 import { Paylink, PaymentRequestType } from "@heliofi/common";
 
 type Favicon = {
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
   const [paymentRequestId, setPaymentRequestId] = useState<string>(
     "63c5b1a765f452f94a1e5ade"
   );
-  const [cluster, setCluster] = useState<Cluster>("mainnet-beta");
+  const [cluster, setCluster] = useState<Cluster>(ClusterType.Mainnet);
   const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [paymentRequest, setPaymentRequest] = useState<Paylink>();
@@ -154,21 +154,39 @@ const Home: NextPage = () => {
                       defaultValue={paymentRequestId}
                       onChange={(e) => {
                         setPaymentRequestId(e.target.value);
+                        setCluster(e.target[e.target.selectedIndex].getAttribute('data-cluster') as Cluster);
+                        setPaymentType(e.target[e.target.selectedIndex].getAttribute('data-payment-type') as PaymentRequestType);
                       }}
                     >
                       <option value="" disabled>
                         Select one...
                       </option>
-                      <option value="63c5b1a765f452f94a1e5ade">
+                      <option
+                          value="63c5b1a765f452f94a1e5ade"
+                          data-payment-type={PaymentRequestType.PAYLINK}
+                          data-cluster={ClusterType.Mainnet}
+                      >
                         Coffee order (mainnet Pay Link)
                       </option>
-                      <option value="63c552ac5cff95b55ea5fcfc">
+                      <option
+                          value="63c552ac5cff95b55ea5fcfc"
+                          data-payment-type={PaymentRequestType.PAYLINK}
+                          data-cluster={ClusterType.Devnet}
+                      >
                         Coffee order (testnet Pay Link)
                       </option>
-                      <option value="641305a1b3953f52a45fc68a">
+                      <option
+                          value="641305a1b3953f52a45fc68a"
+                          data-payment-type={PaymentRequestType.PAYSTREAM}
+                          data-cluster={ClusterType.Mainnet}
+                      >
                         Coffee order (mainnet Pay Stream)
                       </option>
-                      <option value="64130521bcb19399cb11af57">
+                      <option
+                          value="64130521bcb19399cb11af57"
+                          data-payment-type={PaymentRequestType.PAYSTREAM}
+                          data-cluster={ClusterType.Devnet}
+                      >
                         Coffee order (testnet Pay Stream)
                       </option>
                     </select>
@@ -188,9 +206,9 @@ const Home: NextPage = () => {
                         <input
                           type="radio"
                           name="cluster"
-                          value="mainnet-beta"
-                          checked={cluster === "mainnet-beta"}
-                          onChange={() => setCluster("mainnet-beta")}
+                          value={ClusterType.Mainnet}
+                          checked={cluster === ClusterType.Mainnet}
+                          onChange={() => setCluster(ClusterType.Mainnet)}
                         />
                         &nbsp; mainnet-beta
                       </label>
@@ -199,9 +217,9 @@ const Home: NextPage = () => {
                         <input
                           type="radio"
                           name="cluster"
-                          value="devnet"
-                          checked={cluster === "devnet"}
-                          onChange={() => setCluster("devnet")}
+                          value={ClusterType.Devnet}
+                          checked={cluster === ClusterType.Devnet}
+                          onChange={() => setCluster(ClusterType.Devnet)}
                         />
                         &nbsp; devnet
                       </label>
