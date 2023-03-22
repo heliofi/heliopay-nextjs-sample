@@ -246,7 +246,7 @@ const Home: NextPage = () => {
                               checked={paymentType === PaymentRequestType.PAYLINK}
                               onChange={() => setPaymentType(PaymentRequestType.PAYLINK)}
                           />
-                          &nbsp; PayLink
+                          &nbsp; Pay Link
                         </label>
                         &nbsp;&nbsp;&nbsp;
                         <label title={'Recurring payment'}>
@@ -257,7 +257,7 @@ const Home: NextPage = () => {
                               checked={paymentType === PaymentRequestType.PAYSTREAM}
                               onChange={() => setPaymentType(PaymentRequestType.PAYSTREAM)}
                           />
-                          &nbsp; PayStream
+                          &nbsp; Pay Stream
                         </label>
                       </div>
                       <br />
