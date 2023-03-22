@@ -238,7 +238,7 @@ const Home: NextPage = () => {
                       <br />
                       <br />
                       <div>
-                        <label title={'single coffee order'}>
+                        <label title={'1-time payment'}>
                           <input
                               type="radio"
                               name="requestType"
@@ -246,10 +246,10 @@ const Home: NextPage = () => {
                               checked={paymentType === PaymentRequestType.PAYLINK}
                               onChange={() => setPaymentType(PaymentRequestType.PAYLINK)}
                           />
-                          &nbsp; 1-time payment
+                          &nbsp; PayLink
                         </label>
                         &nbsp;&nbsp;&nbsp;
-                        <label title={'coffee subscription'}>
+                        <label title={'Recurring payment'}>
                           <input
                               type="radio"
                               name="requestType"
@@ -257,7 +257,7 @@ const Home: NextPage = () => {
                               checked={paymentType === PaymentRequestType.PAYSTREAM}
                               onChange={() => setPaymentType(PaymentRequestType.PAYSTREAM)}
                           />
-                          &nbsp; recurring payment
+                          &nbsp; PayStream
                         </label>
                       </div>
                       <br />
