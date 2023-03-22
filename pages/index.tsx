@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/main.module.scss";
 
-import {HelioPay} from "@heliofi/react";
+import { HelioPay } from "@heliofi/react";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
