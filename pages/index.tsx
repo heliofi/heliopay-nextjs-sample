@@ -176,7 +176,7 @@ const Home: NextPage = () => {
                           data-payment-type={PaymentRequestType.PAYLINK}
                           data-cluster={ClusterType.Devnet}
                       >
-                        Coffee order (testnet Pay Link)
+                        Coffee order (devnet Pay Link)
                       </option>
                       <option
                           value="641305a1b3953f52a45fc68a"
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
                           data-payment-type={PaymentRequestType.PAYSTREAM}
                           data-cluster={ClusterType.Devnet}
                       >
-                        Coffee order (testnet Pay Stream)
+                        Coffee order (devnet Pay Stream)
                       </option>
                       <option
                           value={''}
