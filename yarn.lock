@@ -2381,6 +2381,13 @@
   dependencies:
     regenerator-runtime "^0.13.10"
 
+"@babel/runtime@^7.18.3":
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@^7.18.10", "@babel/template@^7.20.7", "@babel/template@^7.3.3":
   version "7.20.7"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.20.7.tgz"
@@ -2846,16 +2853,17 @@
   resolved "https://registry.npmjs.org/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@3.2.8-alpha.0":
-  version "3.2.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.2.8-alpha.0.tgz#1057e8edbb1af416396ef7976d5070e7c4cdf0f8"
-  integrity sha512-vjyvIRw6BFrkWlvkJYfz+/YVPipuO6I+SSnJXLB4hZie7mkFB+2/GeQ8cppYJRFkH6hqKTfvT2yIeiP1WQJx5A==
+"@heliofi/react@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.3.3.tgz#fc91957a2b56a900cf75b201587b624a86654e90"
+  integrity sha512-3ybbT0b97yNg1QaKbLqeb3k9aGmeg3Z7N6BbDIdfRc1adiJD96lqc4r8y5p1Dy5l5/tfaqWr45Omg0Hx2jg2aw==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
     "@heliofi/common" "0.1.195"
     "@heliofi/helio-icons" "^1.0.5"
-    "@heliofi/sdk" "^0.1.6-alpha.0"
+    "@heliofi/sdk" "^0.1.8"
     "@heliofi/solana-adapter" "3.1.1-alpha"
+    "@popperjs/core" "^2.11.7"
     "@project-serum/anchor" "^0.25.0"
     "@solana/spl-token" "^0.3.6"
     "@solana/wallet-adapter-base" "^0.9.5"
@@ -2875,6 +2883,7 @@
     react-dom "^18.2.0"
     react-hot-toast "^2.4.0"
     react-phone-number-input "^3.2.11"
+    react-popper-tooltip "^4.4.2"
     react-qr-code "^2.0.11"
     reflect-metadata "^0.1.13"
     styled-components "^5.3.5"
@@ -2882,10 +2891,10 @@
     tweetnacl "^1.0.3"
     yup "^0.32.11"
 
-"@heliofi/sdk@^0.1.6-alpha.0":
-  version "0.1.6-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.1.6-alpha.0.tgz#7b8ad5b72edfcfe9754ec86ccb6eaa9d049b4637"
-  integrity sha512-qctY0NHbm2R0xFzaAjvJ6Nh4MAADNsIUnSNpccxKJr0ZZTKNaxnE0YD5WCjec1fKNzTMhYzmXtdwOJJWxCWRxg==
+"@heliofi/sdk@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.1.8.tgz#cb5f63ca622c35ab37cbda02d41b7d465a301dd2"
+  integrity sha512-zN+e1aT+GKjMqE0ZDGRQTuqML/VB1wos8Og6WYPBwx+lqeaD7FVDHzDK03i+nAYutvTFawLXMUj+pedIIK6Fwg==
   dependencies:
     "@heliofi/common" "0.1.195"
     "@heliofi/solana-adapter" "3.1.1-alpha"
@@ -3430,6 +3439,11 @@
   version "1.0.1"
   resolved "https://registry.npmjs.org/@pedrouid/environment/-/environment-1.0.1.tgz"
   integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
+
+"@popperjs/core@^2.11.5", "@popperjs/core@^2.11.7":
+  version "2.11.7"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.7.tgz#ccab5c8f7dc557a52ca3288c10075c9ccd37fff7"
+  integrity sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==
 
 "@project-serum/anchor@^0.25.0":
   version "0.25.0"
@@ -7961,6 +7975,11 @@ react-fast-compare@^2.0.1:
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
+react-fast-compare@^3.0.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.1.tgz#53933d9e14f364281d6cba24bfed7a4afb808b5f"
+  integrity sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==
+
 react-hot-toast@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.4.0.tgz"
@@ -8015,6 +8034,23 @@ react-phone-number-input@^3.2.11:
     input-format "^0.3.8"
     libphonenumber-js "^1.10.14"
     prop-types "^15.8.1"
+
+react-popper-tooltip@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/react-popper-tooltip/-/react-popper-tooltip-4.4.2.tgz#0dc4894b8e00ba731f89bd2d30584f6032ec6163"
+  integrity sha512-y48r0mpzysRTZAIh8m2kpZ8S1YPNqGtQPDrlXYSGvDS1c1GpG/NUXbsbIdfbhXfmSaRJuTcaT6N1q3CKuHRVbg==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@popperjs/core" "^2.11.5"
+    react-popper "^2.3.0"
+
+react-popper@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.3.0.tgz#17891c620e1320dce318bad9fede46a5f71c70ba"
+  integrity sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==
+  dependencies:
+    react-fast-compare "^3.0.1"
+    warning "^4.0.2"
 
 react-qr-code@^2.0.11:
   version "2.0.11"
@@ -8074,6 +8110,11 @@ regenerator-runtime@^0.13.10:
   version "0.13.10"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz"
   integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 regexp.prototype.flags@^1.4.1, regexp.prototype.flags@^1.4.3:
   version "1.4.3"
@@ -8898,7 +8939,7 @@ walker@^1.0.8:
   dependencies:
     makeerror "1.0.12"
 
-warning@^4.0.3:
+warning@^4.0.2, warning@^4.0.3:
   version "4.0.3"
   resolved "https://registry.npmjs.org/warning/-/warning-4.0.3.tgz"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
