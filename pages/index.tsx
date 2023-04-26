@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/main.module.scss";
@@ -100,6 +101,7 @@ const favicons: Array<Favicon> = [
 
 const Home: NextPage = () => {
   const defaultPaymentRequestId = '63c5b1a765f452f94a1e5ade';
+  const [initialized, setInitialized] = useState<boolean>(false);
   const [paymentRequestId, setPaymentRequestId] = useState<string>(defaultPaymentRequestId);
   const [cluster, setCluster] = useState<Cluster>(ClusterType.Mainnet);
   const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
@@ -116,13 +118,16 @@ const Home: NextPage = () => {
       if (paymentType === PaymentRequestType.PAYLINK && paymentRequestId) {
         const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId, paymentType);
         setPaymentRequest(paylink as Paylink);
+        setInitialized(true);
       } else {
         setPaymentRequest(null);
       }
+
     }
     fetchPaylink();
 
   }, [paymentRequestId, sdk.apiService, paymentType])
+
   return (
     <div>
       <Head>
@@ -191,6 +196,13 @@ const Home: NextPage = () => {
                           data-cluster={ClusterType.Devnet}
                       >
                         Coffee order (devnet Pay Stream)
+                      </option>
+                      <option
+                        value={'643d47cee509bc5eb64cff48'}
+                        data-payment-type={PaymentRequestType.PAYLINK}
+                        data-cluster={ClusterType.Devnet}
+                      >
+                        Coffee order evm (mainnet Pay Link)
                       </option>
                       <option
                           value={''}
@@ -267,7 +279,7 @@ const Home: NextPage = () => {
                 )}
 
                 <div className={styles.paybutton}>
-                  <HelioPay
+                  {initialized && <HelioPay
                     cluster={cluster}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
@@ -295,6 +307,7 @@ const Home: NextPage = () => {
                     //     }
                     // }}
                   />
+                  }
                 </div>
               </div>
               <div className={styles.productRight}>
