@@ -2711,7 +2711,7 @@
   dependencies:
     "@ethersproject/logger" "^5.7.0"
 
-"@ethersproject/providers@5.7.2":
+"@ethersproject/providers@5.7.2", "@ethersproject/providers@^5.7.0":
   version "5.7.2"
   resolved "https://registry.npmjs.org/@ethersproject/providers/-/providers-5.7.2.tgz#f8b1a4f275d7ce58cf0a2eec222269a08beb18cb"
   integrity sha512-g34EWZ1WWAVgr4aptGlVBF8mhl3VWjv+8hoAnzStu8Ah22VHBsuGzP17eb6xDVRzw895G4W7vvx60lFFur/1Rg==
@@ -2874,18 +2874,26 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@heliofi/common@0.1.219":
-  version "0.1.219"
-  resolved "https://registry.npmjs.org/@heliofi/common/-/common-0.1.219.tgz#f91e1551413f5ec92e1cb2f617ad36f87dc53aea"
-  integrity sha512-FydjAciYsqm1XdV6OyUMbt58zjYQHT65/EHg7YxM8+o2lCMbkqYHCsTasm0c26epVCFr1u/5YwwmxBTb/H9HgA==
+"@heliofi/common@0.1.248":
+  version "0.1.248"
+  resolved "https://registry.yarnpkg.com/@heliofi/common/-/common-0.1.248.tgz#0b251b9b48b856d7877c256f851917f1d4bd0d76"
+  integrity sha512-dA/QA/PuLWuHDD6vCcMSkLtch+kVMCcbs8M29WUqcTnGbxR9CPouCqQfIHbH1Tj3lABkVTfYsY9T5XKp1j0aLA==
   dependencies:
     "@heliofi/evm-adapter" "^0.0.28-beta"
     "@project-serum/anchor" "^0.25.0"
     "@solana/web3.js" "^1.44.0"
+    bignumber.js "^9.1.1"
     bs58 "^5.0.0"
     class-transformer "^0.5.1"
     class-validator "^0.14.0"
     moment "^2.29.4"
+
+"@heliofi/evm-adapter@0.0.30-beta":
+  version "0.0.30-beta"
+  resolved "https://registry.yarnpkg.com/@heliofi/evm-adapter/-/evm-adapter-0.0.30-beta.tgz#ee82f2813b6f827a6b9cd274ef0ef962f430fcac"
+  integrity sha512-B0tAEUKU7+VqqL/5esaR45TPkqTkHX0/Xb6Y8fGGjdiHosMjnEB5+1KZ/Crth7F5gfzOD0yxTSZltA3i3ZHWOA==
+  dependencies:
+    ethers "^5.7.2"
 
 "@heliofi/evm-adapter@^0.0.28-beta":
   version "0.0.28-beta"
@@ -2899,15 +2907,16 @@
   resolved "https://registry.npmjs.org/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@3.3.30-alpha.0":
-  version "3.3.30-alpha.0"
-  resolved "https://registry.npmjs.org/@heliofi/react/-/react-3.3.30-alpha.0.tgz#01abf7a06cd18bb47bbf6524ab428aa7a089ac6a"
-  integrity sha512-CwiYGw3l/8UIHo+puv8XPhjCYpUnUdeeOo84RxKmp5RE17BY2Z77hJeIcLxwWHeS5lHSaJQqvriI7PknEu0Ehg==
+"@heliofi/react@3.3.37-alpha.0":
+  version "3.3.37-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.3.37-alpha.0.tgz#e2aac2621e9a56932764998d1e580fae936aef51"
+  integrity sha512-76GOVxB/ywNCaIcoeMwHjXJXBF0fYltozW0cECySjeClR+UmVJe9Fbtlz7jLJfnccZVVwdTqa2HAQQqF00ZB9g==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
-    "@heliofi/common" "0.1.219"
+    "@ethersproject/providers" "^5.7.0"
+    "@heliofi/common" "0.1.248"
     "@heliofi/helio-icons" "^1.0.5"
-    "@heliofi/sdk" "^0.1.18-alpha.0"
+    "@heliofi/sdk" "^0.1.24-alpha.0"
     "@heliofi/solana-adapter" "^3.1.15-alpha.0"
     "@popperjs/core" "^2.11.7"
     "@project-serum/anchor" "^0.25.0"
@@ -2921,7 +2930,7 @@
     bs58 "^5.0.0"
     class-transformer "^0.5.1"
     crypto-js "^4.1.1"
-    downshift "^6.1.7f"
+    downshift "^6.1.7"
     formik "^2.2.9"
     jest "^28.1.1"
     json5 "^2.2.2"
@@ -2940,19 +2949,24 @@
     wagmi "^0.8.6"
     yup "^0.32.11"
 
-"@heliofi/sdk@^0.1.18-alpha.0":
-  version "0.1.18-alpha.0"
-  resolved "https://registry.npmjs.org/@heliofi/sdk/-/sdk-0.1.18-alpha.0.tgz#628b6ed589a8e83c80636539d254e2ff97e712c2"
-  integrity sha512-69XcNxW8rRoa7n4ZLJuwOsnoXi4dyLUZSGxbnWOp1/3GRPlY23cRolbPgx658aDYmIbnOcnbeDrX+z8Tet2btQ==
+"@heliofi/sdk@^0.1.24-alpha.0":
+  version "0.1.24-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.1.24-alpha.0.tgz#295bd08563db11d06f6f847369310b6c3ac92cce"
+  integrity sha512-iQTCz7UcM6BLGSJMVG5KkIS7DiSOtYIe4yWLt/27fYxA6Mrds76288UFMAFZqqtI94plCK/lnhmp0XiKM5vA5g==
   dependencies:
-    "@heliofi/common" "0.1.219"
+    "@ethersproject/providers" "^5.7.0"
+    "@heliofi/common" "0.1.248"
+    "@heliofi/evm-adapter" "0.0.30-beta"
     "@heliofi/solana-adapter" "^3.1.15-alpha.0"
     "@project-serum/anchor" "^0.25.0"
     "@solana/wallet-adapter-react" "^0.15.20"
     "@solana/web3.js" "^1.66.2"
     bs58 "^5.0.0"
+    ethers "^5.7.2"
+    jwt-decode "^3.1.2"
     reflect-metadata "^0.1.13"
     tweetnacl "^1.0.3"
+    wagmi "^0.8.6"
     yarn "^1.22.19"
 
 "@heliofi/solana-adapter@^3.1.15-alpha.0":
@@ -5866,9 +5880,9 @@ dot-case@^3.0.4:
     no-case "^3.0.4"
     tslib "^2.0.3"
 
-downshift@^6.1.7f:
+downshift@^6.1.7:
   version "6.1.12"
-  resolved "https://registry.npmjs.org/downshift/-/downshift-6.1.12.tgz#f14476b41a6f6fd080c340bad1ddf449f7143f6f"
+  resolved "https://registry.yarnpkg.com/downshift/-/downshift-6.1.12.tgz#f14476b41a6f6fd080c340bad1ddf449f7143f6f"
   integrity sha512-7XB/iaSJVS4T8wGFT3WRXmSF1UlBHAA40DshZtkrIscIN+VC+Lh363skLxFTvJwtNgHxAMDGEHT4xsyQFWL+UA==
   dependencies:
     "@babel/runtime" "^7.14.8"
