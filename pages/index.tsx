@@ -200,7 +200,7 @@ const Home: NextPage = () => {
                       <option
                         value={'643d47cee509bc5eb64cff48'}
                         data-payment-type={PaymentRequestType.PAYLINK}
-                        data-cluster={ClusterType.Devnet}
+                        data-cluster={ClusterType.Devnet_Polygon}
                       >
                         Coffee order evm (mainnet Pay Link)
                       </option>
