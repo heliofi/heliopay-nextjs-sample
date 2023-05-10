@@ -198,9 +198,9 @@ const Home: NextPage = () => {
                         Coffee order (devnet Pay Stream)
                       </option>
                       <option
-                        value={'643d47cee509bc5eb64cff48'}
+                        value={'645919e57e76cf2e4183ea48'}
                         data-payment-type={PaymentRequestType.PAYLINK}
-                        data-cluster={ClusterType.Devnet_Polygon}
+                        data-cluster={ClusterType.Devnet}
                       >
                         Coffee order evm (mainnet Pay Link)
                       </option>
