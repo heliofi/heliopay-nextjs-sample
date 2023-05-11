@@ -197,7 +197,7 @@ const Home: NextPage = () => {
                         Coffee order (devnet Pay Stream)
                       </option>
                       <option
-                        value={'645919e57e76cf2e4183ea48'}
+                        value={'645d790816c35de512c725aa'}
                         data-payment-type={PaymentRequestType.PAYLINK}
                         data-cluster={ClusterHelio.Devnet}
                       >
