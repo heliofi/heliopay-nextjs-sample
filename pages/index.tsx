@@ -159,11 +159,10 @@ const Home: NextPage = () => {
                       className={styles.productSelect}
                       defaultValue={paymentRequestId}
                       onChange={(e) => {
-                        console.log(e.target[e.target.selectedIndex].getAttribute('data-payment-type'));
                         setIsShownCustom(!e.target.value);
-                        setPaymentRequestId(e.target.value);
                         setCluster(e.target[e.target.selectedIndex].getAttribute('data-cluster') as ClusterHelioType);
                         setPaymentType(e.target[e.target.selectedIndex].getAttribute('data-payment-type') as PaymentRequestType);
+                        setPaymentRequestId(e.target.value);
                       }}
                     >
                       <option value="" disabled>
