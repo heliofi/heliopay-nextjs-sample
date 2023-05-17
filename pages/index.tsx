@@ -109,7 +109,7 @@ const Home: NextPage = () => {
   const [isShownCustom, setIsShownCustom] = useState<boolean>(false);
 
   const sdk = useMemo(() => {
-    return new HelioSDK({ cluster })
+    return new HelioSDK({ cluster, customApiUrl: '' })
   }, [cluster]);
 
   useEffect( () => {
@@ -197,7 +197,7 @@ const Home: NextPage = () => {
                         Coffee order (devnet Pay Stream)
                       </option>
                       <option
-                        value={'645d790816c35de512c725aa'}
+                        value={'6464cba89ecd5288aeba1472'}
                         data-payment-type={PaymentRequestType.PAYLINK}
                         data-cluster={ClusterHelio.Devnet}
                       >
@@ -296,7 +296,7 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
-                    supportedCurrencies={['USDC']}
+                    supportedCurrencies={paymentRequest?.dynamic ? ['USDC'] : undefined}
                     totalAmount={paymentRequest?.dynamic ? 0.01 : undefined}
                     paymentType={paymentType}
                     // theme={{

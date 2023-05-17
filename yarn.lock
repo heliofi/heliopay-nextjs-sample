@@ -2907,17 +2907,17 @@
   resolved "https://registry.npmjs.org/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz#c240bbc3482b76133ac79e8240dd5c6f71ee0c4b"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@3.3.51-alpha.0":
-  version "3.3.51-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.3.51-alpha.0.tgz#48ab2cfd94c7e95b856cf837ca026598ea530f55"
-  integrity sha512-V2cz0wUbxyA8A09dbcBP2lHiVC94hAZez2LFc49qteb26F/CDSVaQBUxhTo9yMA8QCzSNzCkQdk5OCqyZszYPg==
+"@heliofi/react@3.5.7-alpha.0":
+  version "3.5.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.5.7-alpha.0.tgz#58e65f94c44b3da536b4698c279eb8f0454f093d"
+  integrity sha512-07BL7JHnZ4Q2mA+OHTn4BUQ/jG/QUe3Z48uI5Z1e5OOrlPMt0OE5CmOnzqA+wa5pHcCJvVCbHQ5pm7Z/CzrIvQ==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
     "@ethersproject/providers" "^5.7.0"
     "@heliofi/common" "0.1.248"
     "@heliofi/helio-icons" "^1.0.5"
-    "@heliofi/sdk" "^0.1.30-alpha.0"
-    "@heliofi/solana-adapter" "^3.1.15-alpha.0"
+    "@heliofi/sdk" "^0.3.7-alpha.0"
+    "@heliofi/solana-adapter" "^3.3.3-alpha.0"
     "@popperjs/core" "^2.11.7"
     "@project-serum/anchor" "^0.25.0"
     "@solana/spl-token" "^0.3.6"
@@ -2949,10 +2949,10 @@
     wagmi "^0.8.6"
     yup "^0.32.11"
 
-"@heliofi/sdk@^0.1.30-alpha.0":
-  version "0.1.30-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.1.30-alpha.0.tgz#223246c8aca9b9c674c606ee802923c56873d233"
-  integrity sha512-nWomW+9WGAq2edQL/g7KBBcB2FuT+hi+yeN10CF5msQKgJ37bSNZEDtvpXs/t0IQezIryTDZ6sghT7C344C2MA==
+"@heliofi/sdk@^0.3.7-alpha.0":
+  version "0.3.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.3.7-alpha.0.tgz#9f0e2f8fbd77ff9a4bd5cefc254be7317f3e3e9a"
+  integrity sha512-lYXN7527Yjh10I8ppR6A+VMrMAJEiaLXLFTidmvRFiY0ro7klGnlVMfANfks2UusbSvwnSdmLbFbJaHjFuCYUQ==
   dependencies:
     "@ethersproject/providers" "^5.7.0"
     "@heliofi/common" "0.1.248"
@@ -2973,6 +2973,20 @@
   version "3.1.15-alpha.0"
   resolved "https://registry.npmjs.org/@heliofi/solana-adapter/-/solana-adapter-3.1.15-alpha.0.tgz#d63346ba0e824e03faac4e26c8516ed377239406"
   integrity sha512-KLHRQ2IZ9ABlEymcmkVSqByhVlw/cLNUD3OG9JbocbvClh7u4aeAEsY//Q/hnxsZWKRiAkj5wiq5j475ubNp/Q==
+  dependencies:
+    "@project-serum/anchor" "^0.25.0"
+    "@sideway/formula" "^3.0.1"
+    "@solana/spl-token" "^0.2.0"
+    "@solana/wallet-adapter-react" "^0.15.20"
+    "@solana/web3.js" "^1.66.2"
+    bs58 "^5.0.0"
+    jsonwebtoken "^9.0.0"
+    tweetnacl "^1.0.3"
+
+"@heliofi/solana-adapter@^3.3.3-alpha.0":
+  version "3.3.3-alpha.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/solana-adapter/-/solana-adapter-3.3.3-alpha.0.tgz#c2a8ff66d451bbcd3e7f9cd59060d54fb9275b0f"
+  integrity sha512-bu6oa8fcbzQGy8t3JRWnEDb4Ez6IGFI15uwytQS4cXmkB2kuoAHgMHdDPYAivWDSqV03W8ZtCwxmWUSmLLhsDQ==
   dependencies:
     "@project-serum/anchor" "^0.25.0"
     "@sideway/formula" "^3.0.1"
