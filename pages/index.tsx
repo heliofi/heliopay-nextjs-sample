@@ -271,7 +271,6 @@ const Home: NextPage = () => {
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster={cluster}
-                    customApiUrl={customApiUrl}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event): void {
