@@ -107,9 +107,11 @@ const Home: NextPage = () => {
   const [paymentRequest, setPaymentRequest] = useState<Paylink | null>(null);
   const [isShownCustom, setIsShownCustom] = useState<boolean>(false);
 
+  const customApiUrl = cluster == ClusterType.Devnet ? 'https://dev.api.hel.io/v1' : 'https://api.hel.io/v1'
+
   const sdk = useMemo(() => {
-    return new HelioSDK({ cluster })
-  }, [cluster]);
+    return new HelioSDK({ cluster, customApiUrl })
+  }, [cluster, customApiUrl]);
 
   useEffect( () => {
     const fetchPaylink = async () => {
@@ -269,7 +271,7 @@ const Home: NextPage = () => {
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster={cluster}
-                    customApiUrl={cluster == ClusterType.Devnet ? 'https://dev.api.hel.io/v1' : 'https://api.hel.io/v1'}
+                    customApiUrl={customApiUrl}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event): void {
