@@ -2853,15 +2853,15 @@
   resolved "https://registry.npmjs.org/@heliofi/helio-icons/-/helio-icons-1.0.5.tgz"
   integrity sha512-e5aztRvr62l8LEIGvUmZ5Nu5oKuvNcUE7PhDwN3LBLqeVU+NR7TtiIcaboiFPP2ZHhWGPkAoDbeMXWYxWPu4FA==
 
-"@heliofi/react@3.7.0-alpha.0":
-  version "3.7.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.7.0-alpha.0.tgz#9c2e838a4b35462aca56900942696b784a0f9eba"
-  integrity sha512-rvbYg+pDwIepLZQUZP6280rrqMrPRsJsByuw4wPBgQPdBkogRIivX+b98Ux3aVdHC7a5ZraOsufebiW5g1yaLA==
+"@heliofi/react@3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/react/-/react-3.7.0.tgz#dfcd872a82f46156c6c55e2682ff6ed9b4837e56"
+  integrity sha512-0apExtbjjHuNiYF+aofbG0JjEcifgU6cTtUU6ADRAvq4qeNvB5OPSFnh1QIabJWZEexnymhZ6C+wklBA7cacpA==
   dependencies:
     "@aws-amplify/api-graphql" "^2.3.12"
     "@heliofi/common" "0.1.195"
     "@heliofi/helio-icons" "^1.0.5"
-    "@heliofi/sdk" "^0.5.0-alpha.0"
+    "@heliofi/sdk" "^0.5.0"
     "@heliofi/solana-adapter" "^3.3.10-alpha.0"
     "@popperjs/core" "^2.11.7"
     "@project-serum/anchor" "^0.25.0"
@@ -2892,10 +2892,10 @@
     tweetnacl "^1.0.3"
     yup "^0.32.11"
 
-"@heliofi/sdk@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.5.0-alpha.0.tgz#83b02aff102e1ed9848bf25d3f80f7af26c908a6"
-  integrity sha512-eLBSDuIVMhA0ybxqUCsaZjWThfn5CFPH9N7r9lgAgqAaNMqbrodBGDNMeuLYhE3gTc3wRIwVjWJiYaZhErgzOQ==
+"@heliofi/sdk@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@heliofi/sdk/-/sdk-0.5.0.tgz#a58d5052afedd458327743abc0f33f3245808274"
+  integrity sha512-yc45mxt6pl5HlmwsNuAVUCaFVa5RcyzoMwKFm4OcJb0PbMtoXbQlisZKb09sbVew2nFCS7wqLmfam8geRpOsiQ==
   dependencies:
     "@heliofi/common" "0.1.195"
     "@heliofi/solana-adapter" "^3.3.10-alpha.0"
