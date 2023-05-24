@@ -269,6 +269,7 @@ const Home: NextPage = () => {
                 <div className={styles.paybutton}>
                   <HelioPay
                     cluster={cluster}
+                    customApiUrl={cluster == ClusterType.Devnet ? 'https://dev.api.hel.io/v1' : 'https://api.hel.io/v1'}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
                     onSuccess={function (event): void {
