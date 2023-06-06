@@ -278,7 +278,7 @@ const Home: NextPage = () => {
                 )}
 
                 <div className={styles.paybutton}>
-                  {initialized && <HelioPay
+                  {<HelioPay
                     cluster={cluster}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
