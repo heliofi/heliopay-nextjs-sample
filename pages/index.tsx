@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/main.module.scss";
@@ -7,8 +8,7 @@ import { HelioPay } from "@heliofi/react";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Header from "../src/components/Header";
 import { useEffect, useMemo, useState } from "react";
-import { Cluster } from "@solana/web3.js";
-import { HelioSDK, ClusterType } from "@heliofi/sdk";
+import { HelioSDK, ClusterHelioType, ClusterHelio } from "@heliofi/sdk";
 import { Paylink, PaymentRequestType } from "@heliofi/common";
 
 type Favicon = {
@@ -100,15 +100,16 @@ const favicons: Array<Favicon> = [
 
 const Home: NextPage = () => {
   const defaultPaymentRequestId = '63c5b1a765f452f94a1e5ade';
+  const [initialized, setInitialized] = useState<boolean>(false);
   const [paymentRequestId, setPaymentRequestId] = useState<string>(defaultPaymentRequestId);
-  const [cluster, setCluster] = useState<Cluster>(ClusterType.Mainnet);
+  const [cluster, setCluster] = useState<ClusterHelioType>(ClusterHelio.Mainnet);
   const [paymentType, setPaymentType] = useState<PaymentRequestType>(PaymentRequestType.PAYLINK);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [paymentRequest, setPaymentRequest] = useState<Paylink | null>(null);
   const [isShownCustom, setIsShownCustom] = useState<boolean>(false);
 
   const sdk = useMemo(() => {
-    return new HelioSDK({ cluster })
+    return new HelioSDK({ cluster, customApiUrl: '' })
   }, [cluster]);
 
   useEffect( () => {
@@ -116,13 +117,16 @@ const Home: NextPage = () => {
       if (paymentType === PaymentRequestType.PAYLINK && paymentRequestId) {
         const paylink = await sdk.apiService.getPaymentRequestByIdPublic(paymentRequestId, paymentType);
         setPaymentRequest(paylink as Paylink);
+        setInitialized(true);
       } else {
         setPaymentRequest(null);
       }
+
     }
     fetchPaylink();
 
   }, [paymentRequestId, sdk.apiService, paymentType])
+
   return (
     <div>
       <Head>
@@ -156,9 +160,9 @@ const Home: NextPage = () => {
                       defaultValue={paymentRequestId}
                       onChange={(e) => {
                         setIsShownCustom(!e.target.value);
-                        setPaymentRequestId(e.target.value);
-                        setCluster(e.target[e.target.selectedIndex].getAttribute('data-cluster') as Cluster);
+                        setCluster(e.target[e.target.selectedIndex].getAttribute('data-cluster') as ClusterHelioType);
                         setPaymentType(e.target[e.target.selectedIndex].getAttribute('data-payment-type') as PaymentRequestType);
+                        setPaymentRequestId(e.target.value);
                       }}
                     >
                       <option value="" disabled>
@@ -167,35 +171,42 @@ const Home: NextPage = () => {
                       <option
                           value={defaultPaymentRequestId}
                           data-payment-type={PaymentRequestType.PAYLINK}
-                          data-cluster={ClusterType.Mainnet}
+                          data-cluster={ClusterHelio.Mainnet}
                       >
                         Coffee order (mainnet Pay Link)
                       </option>
                       <option
                           value="63c552ac5cff95b55ea5fcfc"
                           data-payment-type={PaymentRequestType.PAYLINK}
-                          data-cluster={ClusterType.Devnet}
+                          data-cluster={ClusterHelio.Devnet}
                       >
                         Coffee order (devnet Pay Link)
                       </option>
                       <option
                           value="641305a1b3953f52a45fc68a"
                           data-payment-type={PaymentRequestType.PAYSTREAM}
-                          data-cluster={ClusterType.Mainnet}
+                          data-cluster={ClusterHelio.Mainnet}
                       >
                         Coffee order (mainnet Pay Stream)
                       </option>
                       <option
                           value="64130521bcb19399cb11af57"
                           data-payment-type={PaymentRequestType.PAYSTREAM}
-                          data-cluster={ClusterType.Devnet}
+                          data-cluster={ClusterHelio.Devnet}
                       >
                         Coffee order (devnet Pay Stream)
                       </option>
                       <option
+                        value={'6464cba89ecd5288aeba1472'}
+                        data-payment-type={PaymentRequestType.PAYLINK}
+                        data-cluster={ClusterHelio.Devnet}
+                      >
+                        Coffee order evm (devnet Pay Link)
+                      </option>
+                      <option
                           value={''}
                           data-payment-type={PaymentRequestType.PAYLINK}
-                          data-cluster={ClusterType.Mainnet}
+                          data-cluster={ClusterHelio.Mainnet}
                       >
                         Custom
                       </option>
@@ -217,9 +228,9 @@ const Home: NextPage = () => {
                           <input
                               type="radio"
                               name="cluster"
-                              value={ClusterType.Mainnet}
-                              checked={cluster === ClusterType.Mainnet}
-                              onChange={() => setCluster(ClusterType.Mainnet)}
+                              value={ClusterHelio.Mainnet}
+                              checked={cluster === ClusterHelio.Mainnet}
+                              onChange={() => setCluster(ClusterHelio.Mainnet)}
                           />
                           &nbsp; mainnet-beta
                         </label>
@@ -228,9 +239,9 @@ const Home: NextPage = () => {
                           <input
                               type="radio"
                               name="cluster"
-                              value={ClusterType.Devnet}
-                              checked={cluster === ClusterType.Devnet}
-                              onChange={() => setCluster(ClusterType.Devnet)}
+                              value={ClusterHelio.Devnet}
+                              checked={cluster === ClusterHelio.Devnet}
+                              onChange={() => setCluster(ClusterHelio.Devnet)}
                           />
                           &nbsp; devnet
                         </label>
@@ -267,7 +278,7 @@ const Home: NextPage = () => {
                 )}
 
                 <div className={styles.paybutton}>
-                  <HelioPay
+                  {<HelioPay
                     cluster={cluster}
                     payButtonTitle="Buy Coffee"
                     paymentRequestId={paymentRequestId}
@@ -285,7 +296,7 @@ const Home: NextPage = () => {
                     onStartPayment={function (): void {
                       console.log("onStartPayment");
                     }}
-                    supportedCurrencies={['USDC']}
+                    supportedCurrencies={paymentRequest?.dynamic ? ['USDC'] : undefined}
                     totalAmount={paymentRequest?.dynamic ? 0.01 : undefined}
                     paymentType={paymentType}
                     // theme={{
@@ -295,6 +306,7 @@ const Home: NextPage = () => {
                     //     }
                     // }}
                   />
+                  }
                 </div>
               </div>
               <div className={styles.productRight}>
