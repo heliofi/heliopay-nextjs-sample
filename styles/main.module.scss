@@ -30,6 +30,33 @@
   }
 }
 
+.button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  background: skyblue;
+  color: black;
+  font-weight: bold;
+  padding: 1em;
+  margin: 1em;
+  transition: all 200ms;
+
+
+  &:hover {
+    background: blue;
+    color: white;
+  }
+}
+
+.networkTypeMainnet {
+  color: #ff4400;
+}
+
+.networkTypeTestnet {
+  color: #0070f3;
+}
+
 .product {
   display: flex;
   align-items: center;
