@@ -99,7 +99,6 @@ const Checkout: NextPage = () => {
                     src={`https://${HOSTNAME}/assets/index-v1.js`}
                     type="module"
                 />
-                <link rel="stylesheet" href={`https://${HOSTNAME}/assets/index-v1.css`}/>
             </Head>
 
             <main className={styles.main}>
