@@ -79,6 +79,14 @@ const paylinks: Paylink[] = [
             network: 'main'
         }
     },
+    {
+        name: "NFT sale with countdown",
+        type: "mainnet",
+        params: {
+            paylinkId: '656094b867c5936c1c5576a4',
+            network: 'main'
+        }
+    },
 ]
 
 const HOSTNAME = 'embed.hel.io'
