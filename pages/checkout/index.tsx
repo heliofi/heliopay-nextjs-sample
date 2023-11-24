@@ -81,8 +81,7 @@ const paylinks: Paylink[] = [
     },
 ]
 
-// (embed.hel.io for production builds)
-const HOSTNAME = 'helio-embed-git-develop-heliofi.vercel.app'
+const HOSTNAME = 'embed.hel.io'
 
 const Checkout: NextPage = () => {
     const [selectedPaylink, setSelectedPaylink] = useState<Paylink>()
