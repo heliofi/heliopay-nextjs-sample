@@ -1,3 +1,5 @@
+# ⛔️ [December 2023] Warning: This repository uses the old Helio Pay React button, which is now deprecated. Please [`message the team`](https://discord.gg/helio) for an updated project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
